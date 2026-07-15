@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="mb-3">Create QR Code</h2>
+<form method="POST">
+    <input type="text" name="title" class="form-control mb-2" placeholder="Title" required>
+    <input type="text" name="qr_type" class="form-control mb-2" placeholder="Type (e.g. link, wifi, contact)">
+    <textarea name="content" class="form-control mb-2" placeholder="Content" required></textarea>
+    <button type="submit" class="btn btn-success mt-2">Create</button>
+</form>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6 text-center">
+        <h2>Быстрый QR-код (Публичный)</h2>
+        <form method="GET" class="my-3">
+            <input type="text" name="text" class="form-control mb-2" placeholder="Вставьте ссылку, Wi-Fi или текст" required>
+            <button type="submit" class="btn btn-success">Сгенерировать</button>
+        </form>
+        {% if qr_code %}
+            <div class="mt-3">
+                <img src="data:image/png;base64,{{ qr_code }}" class="img-thumbnail">
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6 text-center">
+        <h2 class="mb-3">{{ qr.title }}</h2>
+        <p><strong>Type:</strong> {{ qr.qr_type }}</p>
+        <p><strong>Content:</strong> {{ qr.content }}</p>
+        <div class="my-3">
+            <img src="data:image/png;base64,{{ qr_code }}" class="img-thumbnail">
+        </div>
+        <a href="{{ url_for('dashboard') }}" class="btn btn-secondary">Back to Dashboard</a>
+    </div>
+</div>
+{% endblock %}
