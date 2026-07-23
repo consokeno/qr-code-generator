@@ -1,0 +1,757 @@
+﻿=== FILE: C:\Users\PC\Desktop\downs\1-3 qr-kodu-generators\1-3_README.md ===
+# 1-3 - QR kodu Ä£enerators / QR Code Generator
+
+## Project Purpose
+
+Create a web tool that generates QR codes for links, Wi-Fi access, contacts, and simple event check-in labels.
+
+## Practice Scope
+
+This project is designed for one student during 160 hours of internship practice.
+
+## Expected Learning Result
+
+The student should demonstrate practical ability to analyse requirements, design a small application, prepare a database schema, implement source code, run the system in Docker, test the result, document the work, and publish the final project in GitHub.
+
+## Required Technologies
+
+HTML, CSS, JavaScript, basic backend, PostgreSQL or MariaDB, Docker Compose, GitHub.
+
+## Required Repository Structure
+
+The GitHub repository must follow the same folder structure as this package:
+
+- 01_documentation
+- 02_source_code
+- 03_database
+- 04_docker
+- 05_tests
+- 06_weekly_reports
+- 07_screenshots_and_evidence
+- 08_final_delivery
+
+## Final Acceptance
+
+The project is accepted only when Docker starts successfully, source code is pushed to GitHub, database scripts are present, test cases are documented, screenshots are added, and the final internship report is completed.
+
+
+
+=== FILE: C:\Users\PC\Desktop\downs\1-3 qr-kodu-generators\codemain.py ===
+
+
+
+=== FILE: C:\Users\PC\Desktop\downs\1-3 qr-kodu-generators\01_documentation\1-3_01_Detailed_Requirements.md ===
+# 1-3 Detailed Requirements - QR Code Generator
+
+## 1. Functional Requirements
+
+The student must implement the project described below:
+
+Create a web tool that generates QR codes for links, Wi-Fi access, contacts, and simple event check-in labels.
+
+The application must include clear navigation, structured pages, input forms, validation messages, data listing pages, create/edit/delete flows where relevant, and a simple administration or management area.
+
+## 2. User Roles
+
+Minimum required roles:
+
+- Administrator: can manage all records and system settings.
+- Standard user: can view and manage only the records assigned to the normal workflow.
+- Guest or public user: can view only public information if the project requires public pages.
+
+## 3. Main Features
+
+The student must analyse the project and implement at least these feature groups:
+
+- Data creation form with validation.
+- Data list view with search or filtering.
+- Detail page for one selected record.
+- Edit functionality.
+- Delete or archive functionality.
+- Status field or workflow state.
+- Basic dashboard or summary page.
+- Error handling for incorrect input.
+- Empty-state messages when no data exists.
+- Basic audit field such as created_at and updated_at.
+
+## 4. Non-functional Requirements
+
+The application must be easy to run locally. The user interface must be readable on laptop and mobile screen sizes. The code must be organised into logical folders. Secrets must not be committed to GitHub. The database must be initialised from scripts. Docker Compose must start the required services.
+
+## 5. Technical Requirements
+
+Use Git for version control. Use GitHub for the final repository. Use Docker Compose for local execution. Use PostgreSQL or MariaDB unless the teacher approves a different database. Use environment variables for database connection settings. Include README instructions that a different student can follow without asking additional questions.
+
+## 6. Documentation Requirements
+
+The student must update all documentation during the project and keep it in GitHub. Documentation must include setup steps, database schema, screenshots, test results, known issues, and final practice report.
+
+## 7. Out of Scope
+
+The student must not use real personal data, real passwords, real payment data, or production systems. The project is a learning project and must be safe to run in a local lab environment.
+
+
+
+=== FILE: C:\Users\PC\Desktop\downs\1-3 qr-kodu-generators\01_documentation\1-3_02_160h_Weekly_Plan.md ===
+# 1-3 160 Hour Practice Plan
+
+## Total Effort
+
+160 hours for one student.
+
+## Weekly Breakdown
+
+### Week 1 - 40 hours
+
+Objective: Project setup, repository creation, requirements review, wireframes, database draft, Docker baseline.
+
+Required GitHub evidence:
+
+- Weekly report file committed in 06_weekly_reports.
+- Source code commits from the week.
+- Screenshots or terminal output if relevant.
+- Updated project board or issue list.
+- Short summary of problems and solutions.
+
+### Week 2 - 40 hours
+
+Objective: Core database implementation, backend structure, first API endpoints, frontend skeleton, initial test cases.
+
+Required GitHub evidence:
+
+- Weekly report file committed in 06_weekly_reports.
+- Source code commits from the week.
+- Screenshots or terminal output if relevant.
+- Updated project board or issue list.
+- Short summary of problems and solutions.
+
+### Week 3 - 40 hours
+
+Objective: Main feature implementation, validation, authentication if required, UI improvements, integration testing.
+
+Required GitHub evidence:
+
+- Weekly report file committed in 06_weekly_reports.
+- Source code commits from the week.
+- Screenshots or terminal output if relevant.
+- Updated project board or issue list.
+- Short summary of problems and solutions.
+
+### Week 4 - 40 hours
+
+Objective: Testing, bug fixing, final documentation, screenshots, final report, GitHub cleanup, presentation preparation.
+
+Required GitHub evidence:
+
+- Weekly report file committed in 06_weekly_reports.
+- Source code commits from the week.
+- Screenshots or terminal output if relevant.
+- Updated project board or issue list.
+- Short summary of problems and solutions.
+
+## Daily Work Expectation
+
+The student should work in small commits. Every major change must be committed with a clear message. Examples:
+
+- add initial database schema
+- implement user list page
+- add Docker Compose configuration
+- fix validation for required fields
+- update weekly report
+
+## Weekly Review Rule
+
+At the end of every week the student must push all changes to GitHub and submit the weekly report link to the practice supervisor.
+
+
+
+=== FILE: C:\Users\PC\Desktop\downs\1-3 qr-kodu-generators\01_documentation\1-3_03_Setup_And_Run_Guide.md ===
+# 1-3 Setup and Run Guide
+
+## 1. Required Tools
+
+Install the following tools:
+
+- Git: https://git-scm.com/doc
+- GitHub Docs: https://docs.github.com/
+- Docker: https://docs.docker.com/
+- Docker Compose: https://docs.docker.com/compose/
+- Visual Studio Code: https://code.visualstudio.com/docs
+- PostgreSQL Documentation: https://www.postgresql.org/docs/
+- MariaDB Documentation: https://mariadb.com/kb/en/documentation/
+- MDN HTML: https://developer.mozilla.org/en-US/docs/Web/HTML
+- MDN CSS: https://developer.mozilla.org/en-US/docs/Web/CSS
+- MDN JavaScript: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+
+## 2. Repository Preparation
+
+Run these commands:
+
+```bash
+git init
+git branch -M main
+git add .
+git commit -m "initial project structure"
+```
+
+Create a GitHub repository and push the code:
+
+```bash
+git remote add origin <your-github-repository-url>
+git push -u origin main
+```
+
+## 3. Docker Start
+
+From the project root run:
+
+```bash
+docker compose up -d --build
+docker compose ps
+docker compose logs -f
+```
+
+## 4. Docker Stop
+
+```bash
+docker compose down
+```
+
+## 5. Rebuild After Changes
+
+```bash
+docker compose down
+docker compose up -d --build
+```
+
+## 6. Database Initialisation
+
+Place SQL files in the 03_database folder. The schema must create tables, indexes, constraints, and seed test records.
+
+## 7. Common Mistakes to Avoid
+
+- Do not commit passwords.
+- Do not hardcode database hostnames.
+- Do not keep all code in one file.
+- Do not skip validation.
+- Do not submit screenshots only without source code.
+- Do not forget weekly reports.
+
+
+
+=== FILE: C:\Users\PC\Desktop\downs\1-3 qr-kodu-generators\02_source_code\1-3_source_code_placeholder.md ===
+# 1-3 Source Code Folder
+
+Place the project source code here.
+
+Recommended structure:
+
+- frontend
+- backend
+- config
+- public
+- src
+- tests
+
+The student must update this structure based on the selected technology stack.
+
+
+
+=== FILE: C:\Users\PC\Desktop\downs\1-3 qr-kodu-generators\02_source_code\1-3_starter_index.html ===
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>1-3 - QR Code Generator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <h1>1-3 - QR Code Generator</h1>
+  <p>This is the starter page. Student must replace it with the real project implementation.</p>
+</body>
+</html>
+
+
+
+=== FILE: C:\Users\PC\Desktop\downs\1-3 qr-kodu-generators\03_database\1-3_04_Database_Schema.md ===
+# 1-3 Database Design
+
+## Required Database Objects
+
+The student must prepare a relational database schema for this project.
+
+## Minimum Common Tables
+
+```sql
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    full_name VARCHAR(120) NOT NULL,
+    email VARCHAR(160) NOT NULL UNIQUE,
+    role VARCHAR(50) NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE audit_logs (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER,
+    action VARCHAR(120) NOT NULL,
+    entity_name VARCHAR(120) NOT NULL,
+    entity_id INTEGER,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+```
+
+## Project-specific Tables
+
+The student must add project-specific tables for: QR Code Generator.
+
+Examples of required modelling decisions:
+
+- Identify the main entity of the application.
+- Identify supporting entities.
+- Add foreign keys.
+- Add indexes for searchable fields.
+- Add status fields where workflow is required.
+- Add timestamps to important tables.
+
+## Required Deliverables
+
+- Entity relationship description.
+- SQL schema file.
+- Seed data file.
+- Short explanation of each table.
+- Screenshot proving that the database runs in Docker.
+
+
+
+=== FILE: C:\Users\PC\Desktop\downs\1-3 qr-kodu-generators\03_database\1-3_schema.sql ===
+-- Create project-specific database schema here.
+-- Student must update this file during implementation.
+
+CREATE TABLE IF NOT EXISTS users (
+    id SERIAL PRIMARY KEY,
+    full_name VARCHAR(120) NOT NULL,
+    email VARCHAR(160) NOT NULL UNIQUE,
+    role VARCHAR(50) NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+
+
+=== FILE: C:\Users\PC\Desktop\downs\1-3 qr-kodu-generators\03_database\1-3_seed_data.sql ===
+-- Add test data for local development here.
+INSERT INTO users (full_name, email, role)
+VALUES ('Demo Administrator', 'admin@example.local', 'administrator');
+
+
+
+=== FILE: C:\Users\PC\Desktop\downs\1-3 qr-kodu-generators\04_docker\1-3_05_Docker_Instructions.md ===
+# 1-3 Docker Instructions
+
+## Start
+
+```bash
+cd 04_docker
+docker compose -f 1-3_docker-compose.yml up -d --build
+```
+
+## Check Containers
+
+```bash
+docker compose -f 1-3_docker-compose.yml ps
+```
+
+## View Logs
+
+```bash
+docker compose -f 1-3_docker-compose.yml logs -f
+```
+
+## Stop
+
+```bash
+docker compose -f 1-3_docker-compose.yml down
+```
+
+## Reset Database
+
+```bash
+docker compose -f 1-3_docker-compose.yml down -v
+docker compose -f 1-3_docker-compose.yml up -d --build
+```
+
+## Required Evidence
+
+The student must add screenshots showing:
+
+- Docker containers running.
+- Application page opened in browser.
+- Database container logs without fatal errors.
+
+
+
+=== FILE: C:\Users\PC\Desktop\downs\1-3 qr-kodu-generators\04_docker\1-3_docker-compose.yml ===
+version: "3.9"
+
+services:
+  app:
+    image: nginx:latest
+    container_name: 1-3_app
+    ports:
+      - "8080:80"
+    volumes:
+      - ../02_source_code:/usr/share/nginx/html:ro
+    depends_on:
+      - database
+
+  database:
+    image: postgres:15
+    container_name: 1-3_database
+    environment:
+      POSTGRES_USER: student
+      POSTGRES_PASSWORD: student_password
+      POSTGRES_DB: practice_project
+    ports:
+      - "5432:5432"
+    volumes:
+      - ../03_database/1-3_schema.sql:/docker-entrypoint-initdb.d/01_schema.sql:ro
+      - ../03_database/1-3_seed_data.sql:/docker-entrypoint-initdb.d/02_seed_data.sql:ro
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:
+
+
+
+=== FILE: C:\Users\PC\Desktop\downs\1-3 qr-kodu-generators\05_tests\1-3_06_Test_Cases.md ===
+# 1-3 Test Cases
+
+## Test Case Format
+
+Each test case must include:
+
+- Test case ID
+- Feature
+- Preconditions
+- Test steps
+- Expected result
+- Actual result
+- Status: Passed or Failed
+- Screenshot reference
+
+## Required Functional Test Cases
+
+1. Application starts successfully.
+2. Main page opens without errors.
+3. User can create a new record.
+4. User can view a list of records.
+5. User can open record details.
+6. User can edit an existing record.
+7. User can delete or archive a record.
+8. Required fields are validated.
+9. Invalid data is rejected.
+10. Search or filtering works if implemented.
+
+## Required Technical Test Cases
+
+1. Docker containers start successfully.
+2. Database connection works.
+3. Database schema is created automatically.
+4. Seed data is loaded.
+5. Application can be restarted without losing database data.
+
+## Required Security Test Cases
+
+1. Passwords or secrets are not committed to GitHub.
+2. User input is validated.
+3. Error messages do not expose stack traces.
+4. User roles are checked where roles are implemented.
+
+
+
+=== FILE: C:\Users\PC\Desktop\downs\1-3 qr-kodu-generators\06_weekly_reports\1-3_Week_1_Report_Template.md ===
+# 1-3 Weekly Report - Week 1
+
+## Student Information
+
+Student name:
+Group:
+Project ID: 1-3
+Project name: QR Code Generator
+Week number: 1
+
+## Planned Work For This Week
+
+Project setup, repository creation, requirements review, wireframes, database draft, Docker baseline.
+
+## Completed Work
+
+Describe what was completed during the week.
+
+## GitHub Commits
+
+Add links or commit hashes.
+
+## Screenshots / Evidence
+
+List screenshots added to 07_screenshots_and_evidence.
+
+## Problems Found
+
+Describe technical problems, blockers, or questions.
+
+## Solutions Applied
+
+Describe how problems were solved.
+
+## Next Week Plan
+
+Describe what will be done next.
+
+## Supervisor Notes
+
+To be completed by the practice supervisor if needed.
+
+
+
+=== FILE: C:\Users\PC\Desktop\downs\1-3 qr-kodu-generators\06_weekly_reports\1-3_Week_2_Report_Template.md ===
+# 1-3 Weekly Report - Week 2
+
+## Student Information
+
+Student name:
+Group:
+Project ID: 1-3
+Project name: QR Code Generator
+Week number: 2
+
+## Planned Work For This Week
+
+Core database implementation, backend structure, first API endpoints, frontend skeleton, initial test cases.
+
+## Completed Work
+
+Describe what was completed during the week.
+
+## GitHub Commits
+
+Add links or commit hashes.
+
+## Screenshots / Evidence
+
+List screenshots added to 07_screenshots_and_evidence.
+
+## Problems Found
+
+Describe technical problems, blockers, or questions.
+
+## Solutions Applied
+
+Describe how problems were solved.
+
+## Next Week Plan
+
+Describe what will be done next.
+
+## Supervisor Notes
+
+To be completed by the practice supervisor if needed.
+
+
+
+=== FILE: C:\Users\PC\Desktop\downs\1-3 qr-kodu-generators\06_weekly_reports\1-3_Week_3_Report_Template.md ===
+# 1-3 Weekly Report - Week 3
+
+## Student Information
+
+Student name:
+Group:
+Project ID: 1-3
+Project name: QR Code Generator
+Week number: 3
+
+## Planned Work For This Week
+
+Main feature implementation, validation, authentication if required, UI improvements, integration testing.
+
+## Completed Work
+
+Describe what was completed during the week.
+
+## GitHub Commits
+
+Add links or commit hashes.
+
+## Screenshots / Evidence
+
+List screenshots added to 07_screenshots_and_evidence.
+
+## Problems Found
+
+Describe technical problems, blockers, or questions.
+
+## Solutions Applied
+
+Describe how problems were solved.
+
+## Next Week Plan
+
+Describe what will be done next.
+
+## Supervisor Notes
+
+To be completed by the practice supervisor if needed.
+
+
+
+=== FILE: C:\Users\PC\Desktop\downs\1-3 qr-kodu-generators\06_weekly_reports\1-3_Week_4_Report_Template.md ===
+# 1-3 Weekly Report - Week 4
+
+## Student Information
+
+Student name:
+Group:
+Project ID: 1-3
+Project name: QR Code Generator
+Week number: 4
+
+## Planned Work For This Week
+
+Testing, bug fixing, final documentation, screenshots, final report, GitHub cleanup, presentation preparation.
+
+## Completed Work
+
+Describe what was completed during the week.
+
+## GitHub Commits
+
+Add links or commit hashes.
+
+## Screenshots / Evidence
+
+List screenshots added to 07_screenshots_and_evidence.
+
+## Problems Found
+
+Describe technical problems, blockers, or questions.
+
+## Solutions Applied
+
+Describe how problems were solved.
+
+## Next Week Plan
+
+Describe what will be done next.
+
+## Supervisor Notes
+
+To be completed by the practice supervisor if needed.
+
+
+
+=== FILE: C:\Users\PC\Desktop\downs\1-3 qr-kodu-generators\07_screenshots_and_evidence\usedsites.txt ===
+
+
+
+=== FILE: C:\Users\PC\Desktop\downs\1-3 qr-kodu-generators\08_final_delivery\1-3_07_Final_Internship_Report_Template.md ===
+# 1-3 Final Internship Practice Report Template
+
+## 1. Student Information
+
+Student name:
+Group:
+Practice period:
+Project ID: 1-3
+Project name: QR Code Generator
+GitHub repository URL:
+
+## 2. Project Summary
+
+Describe the project purpose and implemented result.
+
+## 3. Requirements Completed
+
+List each completed requirement and explain where it can be found in the application.
+
+## 4. System Architecture
+
+Describe frontend, backend, database, Docker containers, and external libraries.
+
+## 5. Database Description
+
+Describe all tables, relationships, indexes, and seed data.
+
+## 6. Docker Execution
+
+Include exact commands used to run the project.
+
+## 7. Testing Summary
+
+Summarise functional, technical, and security tests. Add links to test evidence.
+
+## 8. Screenshots
+
+List all screenshots with short explanations.
+
+## 9. GitHub Work Summary
+
+Describe branches, commits, pull requests if used, and repository structure.
+
+## 10. Problems and Solutions
+
+Describe the most important technical problems and how they were solved.
+
+## 11. Self-evaluation
+
+Describe what was learned and what could be improved.
+
+## 12. Final Checklist
+
+- Source code is committed.
+- Docker Compose file is present.
+- Database schema is present.
+- Test cases are present.
+- Weekly reports are present.
+- Screenshots are present.
+- Final report is completed.
+
+
+
+=== FILE: C:\Users\PC\Desktop\downs\1-3 qr-kodu-generators\08_final_delivery\1-3_08_Final_Delivery_Checklist.md ===
+# 1-3 Final Delivery Checklist
+
+## GitHub Repository
+
+- Repository is public or shared with the supervisor.
+- README explains how to run the project.
+- Folder structure is clean.
+- Commit history shows regular work.
+
+## Application
+
+- Application runs locally.
+- Docker Compose starts required services.
+- Database is initialised from scripts.
+- Main features are implemented.
+- Input validation is present.
+
+## Documentation
+
+- Detailed requirements are present.
+- Setup guide is present.
+- Database documentation is present.
+- Test cases are present.
+- Weekly reports are completed.
+- Final report is completed.
+
+## Evidence
+
+- Screenshots show application pages.
+- Screenshots show Docker containers.
+- Screenshots show database or logs.
+- Test results are documented.
+
+
+

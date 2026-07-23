@@ -1,0 +1,30 @@
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    container_name: 1-3_app
+    ports:
+      - "5000:5000"
+    environment:
+      - DATABASE_URL=postgresql://student:student_password@database:5432/practice_project
+      - SECRET_KEY=supersecretkey123
+    depends_on:
+      - database
+
+  database:
+    image: postgres:15
+    container_name: 1-3_database
+    environment:
+      POSTGRES_USER: student
+      POSTGRES_PASSWORD: student_password
+      POSTGRES_DB: practice_project
+    ports:
+      - "5432:5432"
+    volumes:
+      - ../03_database/1-3_schema.sql:/docker-entrypoint-initdb.d/01_schema.sql:ro
+      - ../03_database/1-3_seed_data.sql:/docker-entrypoint-initdb.d/02_seed_data.sql:ro
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:
