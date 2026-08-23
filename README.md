@@ -1,34 +1,86 @@
-# 1-3 - QR kodu ģenerators / QR Code Generator
+# QR Code Generator
 
-## Project Purpose
+A Flask web application for generating, saving, and managing QR codes (links, Wi-Fi, contacts, text). Users can create QR codes, view them on a personal dashboard, and administrators can view/manage all codes.
 
-Create a web tool that generates QR codes for links, Wi-Fi access, contacts, and simple event check-in labels.
+## Requirements
 
-## Practice Scope
+- Docker
+- Docker Compose
 
-This project is designed for one student during 160 hours of internship practice.
+No local Python installation is required — the app and database both run in containers.
 
-## Expected Learning Result
+## Project Structure
 
-The student should demonstrate practical ability to analyse requirements, design a small application, prepare a database schema, implement source code, run the system in Docker, test the result, document the work, and publish the final project in GitHub.
+```
+.
+codemain.py                  # Flask application
+dockerfile                   # App container definition
+requirements.txt             # Python dependencies
+02_source_code/              # HTML templates
+03_database/                 # SQL schema and seed data
+04_docker/
+   1-3_docker-compose.yml   # Compose file (app + PostgreSQL)
+```
 
-## Required Technologies
+## How to Run
 
-HTML, CSS, JavaScript, basic backend, PostgreSQL or MariaDB, Docker Compose, GitHub.
+1. Clone the repository:
+   ```
+   git clone <https://github.com/consokeno/qr-code-generator.git>
 
-## Required Repository Structure
+   ```
 
-The GitHub repository must follow the same folder structure as this package:
+2. Start the app and database by starting a command prompt in folder:
+   ```
+   cd 04_docker
+   docker compose -f 1-3_docker-compose.yml up -d
+   ```
 
-- 01_documentation
-- 02_source_code
-- 03_database
-- 04_docker
-- 05_tests
-- 06_weekly_reports
-- 07_screenshots_and_evidence
-- 08_final_delivery
+3. Open the app in your browser:
+   ```
+   http://localhost:5000
 
-## Final Acceptance
+   ```
 
-The project is accepted only when Docker starts successfully, source code is pushed to GitHub, database scripts are present, test cases are documented, screenshots are added, and the final internship report is completed.
+
+To stop the containers:
+```
+docker compose -f 1-3_docker-compose.yml down
+```
+
+## Demo Accounts
+
+The database has two test accounts you may add more in 03_database/1-3_seed_data.sql:
+
+| Role          | Email                  | Password   |
+| Administrator | admin@example.local    | admin123   |
+| User          | user@example.local     | user123    |
+
+## Features
+
+- Public QR code generator (no login required)
+- User login and session-based authentication
+- Dashboard listing saved QR codes with search by title
+- Create, view, and delete QR codes
+- Administrators can view and manage all users' QR codes
+
+## Configuration
+
+The Flask app reads these environment variables (set in `1-3_docker-compose.yml`):
+
+- `DATABASE_URL` — PostgreSQL connection string
+- `SECRET_KEY` — Flask session secret key
+
+## Ports
+
+- `5000` — Flask app
+- `5432` — PostgreSQL
+
+## Tech Stack
+
+- Python / Flask
+- Flask-SQLAlchemy, Flask-Login
+- PostgreSQL 15
+- qrcode + Pillow (QR image generation)
+- Bootstrap 5 (UI)
+- Docker / Docker Compose
