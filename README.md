@@ -12,7 +12,7 @@ No local Python installation is required — the app and database both run in co
 ## Project Structure
 
 ```
-.
+
 codemain.py                  # Flask application
 dockerfile                   # App container definition
 requirements.txt             # Python dependencies
@@ -26,10 +26,14 @@ requirements.txt             # Python dependencies
 
 1. Clone the repository:
    ```
-   git clone <https://github.com/consokeno/qr-code-generator.git>
+   git clone https://github.com/consokeno/qr-code-generator.git
 
    ```
 
+1.2 Download docker:
+ ```
+https://www.docker.com/
+ ```
 2. Start the app and database by starting a command prompt in folder:
    ```
    cd 04_docker
@@ -43,7 +47,7 @@ requirements.txt             # Python dependencies
    ```
 
 
-To stop the containers:
+To stop the containers(app):
 ```
 docker compose -f 1-3_docker-compose.yml down
 ```
